@@ -24,9 +24,10 @@ mplArr.map(function(elem){
 })
 
 
-function deleteRow(){
-    event.target.parentNode.remove();
-    event.target.parentNode.innerHTML="";
+function deleteRow(elem, index) {
+    mplArr.splice(index, 1);
+    localStorage.setItem("mplObj", JSON.stringify(mplArr));
+    window.location.reload();
     
-}
+  }
 
